@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo de Estética Facial - LunarStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Helvetica+Neue:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #000;
+        }
+
+        /* Typography Hierarchy */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        p, li, span {
+            font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 20px 0;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: 800;;
+            color: #D4AF37;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            color: #D4AF37;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero .description {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Author Section */
+        .author {
+            background: #111;
+            padding: 60px 0;
+            border-top: 1px solid #333;
+        }
+
+        .author-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .author-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            color: #000;
+            flex-shrink: 0;
+        }
+
+        .author-text h2 {
+            color: #D4AF37;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .author-text p {
+            color: #ccc;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .experience-badge {
+            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Products Section */
+        .products {
+            background: #000;
+            padding: 80px 0;
+        }
+
+        .products h2 {
+            text-align: center;
+            color: #D4AF37;
+            font-size: 2.8em;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #111 0%, #222 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D4AF37, #B8941F);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #D4AF37;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .product-card h3 {
+            color: #D4AF37;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .product-card .pages {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .product-card .price {
+            font-size: 2.5em;
+            color: #D4AF37;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .product-card .price-detail {
+            color: #ccc;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .product-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .product-card li {
+            color: #ccc;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .product-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            color: #000;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .recommended {
+            position: relative;
+        }
+
+        .recommended::after {
+            content: 'RECOMENDADO';
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            background: #D4AF37;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 700;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: #111;
+            padding: 80px 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            color: #D4AF37;
+            font-size: 2.8em;
+            margin-bottom: 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #000;
+        }
+
+        .benefit-item h3 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .benefit-item p {
+            color: #ccc;
+            font-size: 1.1em;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: #000;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .guarantee-badge {
+            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            color: #000;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .guarantee h2 {
+            color: #D4AF37;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .guarantee p {
+            color: #ccc;
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Urgency Section */
+        .urgency {
+            background: linear-gradient(45deg, #B8941F, #D4AF37);
+            color: #000;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .urgency h2 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .urgency p {
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .timer {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #111;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .author-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-image {
+                width: 150px;
+                height: 150px;
+                font-size: 3em;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Ativo 3.png">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Guia Completo de Estética Facial</h1>
+                <p class="subtitle">Do Iniciante ao Especialista em Estética</p>
+                <p class="description">
+                    Transforme sua paixão por estética em um negócio lucrativo com o conhecimento de 20 anos de experiência prática compilado em um guia definitivo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="author">
+        <div class="container">
+            <div class="author-content">
+                <div class="author-image"><img src="doctor.png"></div>
+                <div class="author-text">
+                    <h2>Especialista em Estética Facial</h2>
+                    <p>Profissional com mais de duas décadas de experiência prática na área de estética facial, responsável por transformar centenas de carreiras e negócios no setor.</p>
+                    <p>Autor do método mais completo de formação em estética facial disponível no mercado brasileiro.</p>
+                    <span class="experience-badge">20+ Anos de Experiência</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2>Escolha sua Jornada</h2>
+            <div class="products-grid">
+                <!-- Guia Completo -->
+                <div class="product-card recommended">
+                    <h3>Guia Completo</h3>
+                    <p class="pages">205 páginas de conteúdo premium</p>
+                    <div class="price">R$ 797</div>
+                    <p class="price-detail">Pagamento à vista • Economia de R$ 216</p>
+                    <ul>
+                        <li>Todo o conteúdo em um único guia</li>
+                        <li>Fundamentos da estética facial</li>
+                        <li>Equipamentos e produtos essenciais</li>
+                        <li>Tipos de pele e aplicações</li>
+                        <li>Gestão administrativa completa</li>
+                        <li>Contratos e documentos para download</li>
+                        <li>Planilhas financeiras prontas</li>
+                        <li>Bônus: Consultoria online de 1h</li>
+                    </ul>
+                    <button class="cta-button" onclick="purchaseComplete()">Quero o Guia Completo</button>
+                </div>
+
+                <!-- Versão Parcelada -->
+                <div class="product-card">
+                    <h3>Versão Parcelada</h3>
+                    <p class="pages">3 e-books • 75 + 72 + 68 páginas</p>
+                    <div class="price">3x R$ 194</div>
+                    <p class="price-detail">Total: R$ 582 • Facilita o pagamento</p>
+                    <ul>
+                        <li>Parte 1: Fundamentos (75 páginas)</li>
+                        <li>Parte 2: Técnicas Avançadas (72 páginas)</li>
+                        <li>Parte 3: Gestão do Negócio (68 páginas)</li>
+                        <li>Mesmo conteúdo, dividido estrategicamente</li>
+                        <li>Receba parte a parte conforme pagamento</li>
+                        <li>Ideal para quem prefere investir aos poucos</li>
+                        <li>Todos os bônus incluídos</li>
+                    </ul>
+                    <button class="cta-button" onclick="purchaseInstallments()">Comprar Parcelado</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>O que Você Vai Aprender</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Fundamentos Sólidos</h3>
+                    <p>Desde os primeiros passos como esteticista até técnicas avançadas de tratamento facial.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Equipamentos Essenciais</h3>
+                    <p>Guia completo sobre equipamentos, quando usar cada um e como fazer investimentos inteligentes.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Gestão Financeira</h3>
+                    <p>Planilhas prontas, contratos profissionais e estratégias para administrar sua clínica com sucesso.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Aplicações Práticas</h3>
+                    <p>Tipos de pele, argilas, protocolos de tratamento e tudo que você precisa para atender com excelência.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-badge">
+                <h2 style="color: #000;">Garantia de 30 Dias</h2>
+            </div>
+            <p>
+                Teste o conteúdo por 30 dias. Se não estiver satisfeito(a) com o material, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="urgency">
+        <div class="container">
+            <h2>Oferta Por Tempo Limitado</h2>
+            <p>Preço especial válido apenas nas próximas:</p>
+            <div class="timer" id="countdown">47:23:15</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 LunarStore. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        let timeLeft = 47 * 3600 + 23 * 60 + 15; // 47h 23m 15s in seconds
+
+        function updateCountdown() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                timeLeft = 47 * 3600 + 23 * 60 + 15; // Reset timer
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Purchase Functions
+        function purchaseComplete() {
+            alert('Redirecionando para pagamento do Guia Completo...\n\nValor: R$ 797,00 à vista\nEconomia: R$ 216,00');
+            // Aqui você integraria com o sistema de pagamento
+        }
+
+        function purchaseInstallments() {
+            alert('Redirecionando para pagamento parcelado...\n\nValor: 3x R$ 194,00\nTotal: R$ 582,00');
+            // Aqui você integraria com o sistema de pagamento
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
