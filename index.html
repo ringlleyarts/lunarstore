@@ -34,16 +34,73 @@
             padding: 0 20px;
         }
 
+        /* Theme Variables */
+        :root {
+            --bg-primary: #000;
+            --bg-secondary: #111;
+            --bg-tertiary: #1a1a1a;
+            --text-primary: #fff;
+            --text-secondary: #ccc;
+            --text-muted: #999;
+            --border-color: #333;
+            --accent-gold: #D4AF37;
+            --accent-gold-dark: #B8941F;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #fff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+            --accent-gold: #D4AF37;
+            --accent-gold-dark: #B8941F;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--accent-gold);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+        }
+
         /* Header */
         .header {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
             padding: 20px 0;
-            border-bottom: 2px solid #D4AF37;
+            border-bottom: 2px solid var(--accent-gold);
+            transition: background 0.3s ease;
         }
 
         .logo {
             font-size: 2.5em;
-            font-weight: 800;;
+            font-weight: 800;
             color: #D4AF37;
             text-align: center;
             text-transform: uppercase;
@@ -101,9 +158,10 @@
 
         /* Author Section */
         .author {
-            background: #111;
+            background: var(--bg-secondary);
             padding: 60px 0;
-            border-top: 1px solid #333;
+            border-top: 1px solid var(--border-color);
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
         .author-content {
@@ -116,7 +174,7 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-dark));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -126,19 +184,21 @@
         }
 
         .author-text h2 {
-            color: #D4AF37;
+            color: var(--accent-gold);
             font-size: 2.5em;
             margin-bottom: 20px;
+            transition: color 0.3s ease;
         }
 
         .author-text p {
-            color: #ccc;
+            color: var(--text-secondary);
             font-size: 1.2em;
             margin-bottom: 15px;
+            transition: color 0.3s ease;
         }
 
         .experience-badge {
-            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-dark));
             color: #000;
             padding: 15px 30px;
             border-radius: 30px;
@@ -150,16 +210,18 @@
 
         /* Products Section */
         .products {
-            background: #000;
+            background: var(--bg-primary);
             padding: 80px 0;
+            transition: background 0.3s ease;
         }
 
         .products h2 {
             text-align: center;
-            color: #D4AF37;
+            color: var(--accent-gold);
             font-size: 2.8em;
             margin-bottom: 60px;
             font-weight: 700;
+            transition: color 0.3s ease;
         }
 
         .products-grid {
@@ -170,10 +232,10 @@
         }
 
         .product-card {
-            background: linear-gradient(135deg, #111 0%, #222 100%);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
             padding: 40px;
             border-radius: 15px;
-            border: 2px solid #333;
+            border: 2px solid var(--border-color);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -186,38 +248,42 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #D4AF37, #B8941F);
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-dark));
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            border-color: #D4AF37;
+            border-color: var(--accent-gold);
             box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
         }
 
         .product-card h3 {
-            color: #D4AF37;
+            color: var(--accent-gold);
             font-size: 1.8em;
             margin-bottom: 15px;
+            transition: color 0.3s ease;
         }
 
         .product-card .pages {
-            color: #999;
+            color: var(--text-muted);
             font-size: 0.9em;
             margin-bottom: 20px;
+            transition: color 0.3s ease;
         }
 
         .product-card .price {
             font-size: 2.5em;
-            color: #D4AF37;
+            color: var(--accent-gold);
             font-weight: 800;
             margin-bottom: 10px;
+            transition: color 0.3s ease;
         }
 
         .product-card .price-detail {
-            color: #ccc;
+            color: var(--text-secondary);
             font-size: 1em;
             margin-bottom: 20px;
+            transition: color 0.3s ease;
         }
 
         .product-card ul {
@@ -226,22 +292,23 @@
         }
 
         .product-card li {
-            color: #ccc;
+            color: var(--text-secondary);
             margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
+            transition: color 0.3s ease;
         }
 
         .product-card li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #D4AF37;
+            color: var(--accent-gold);
             font-weight: bold;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-dark));
             color: #000;
             padding: 18px 40px;
             border: none;
@@ -267,9 +334,9 @@
         .recommended::after {
             content: 'RECOMENDADO';
             position: absolute;
-            top: 0px;
+            top: -10px;
             right: 20px;
-            background: #D4AF37;
+            background: var(--accent-gold);
             color: #000;
             padding: 5px 15px;
             border-radius: 15px;
@@ -279,15 +346,17 @@
 
         /* Benefits Section */
         .benefits {
-            background: #111;
+            background: var(--bg-secondary);
             padding: 80px 0;
+            transition: background 0.3s ease;
         }
 
         .benefits h2 {
             text-align: center;
-            color: #D4AF37;
+            color: var(--accent-gold);
             font-size: 2.8em;
             margin-bottom: 60px;
+            transition: color 0.3s ease;
         }
 
         .benefits-grid {
@@ -304,7 +373,7 @@
         .benefit-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-dark));
             border-radius: 50%;
             margin: 0 auto 20px;
             display: flex;
@@ -315,25 +384,28 @@
         }
 
         .benefit-item h3 {
-            color: #D4AF37;
+            color: var(--accent-gold);
             margin-bottom: 15px;
             font-size: 1.5em;
+            transition: color 0.3s ease;
         }
 
         .benefit-item p {
-            color: #ccc;
+            color: var(--text-secondary);
             font-size: 1.1em;
+            transition: color 0.3s ease;
         }
 
         /* Guarantee Section */
         .guarantee {
-            background: #000;
+            background: var(--bg-primary);
             padding: 60px 0;
             text-align: center;
+            transition: background 0.3s ease;
         }
 
         .guarantee-badge {
-            background: linear-gradient(45deg, #D4AF37, #B8941F);
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-dark));
             color: #000;
             padding: 30px;
             border-radius: 20px;
@@ -342,21 +414,23 @@
         }
 
         .guarantee h2 {
-            color: #D4AF37;
+            color: var(--accent-gold);
             font-size: 2.5em;
             margin-bottom: 20px;
+            transition: color 0.3s ease;
         }
 
         .guarantee p {
-            color: #ccc;
+            color: var(--text-secondary);
             font-size: 1.2em;
             max-width: 600px;
             margin: 0 auto;
+            transition: color 0.3s ease;
         }
 
         /* Urgency Section */
         .urgency {
-            background: linear-gradient(45deg, #B8941F, #D4AF37);
+            background: linear-gradient(45deg, var(--accent-gold-dark), var(--accent-gold));
             color: #000;
             padding: 40px 0;
             text-align: center;
@@ -381,15 +455,17 @@
 
         /* Footer */
         .footer {
-            background: #111;
+            background: var(--bg-secondary);
             padding: 40px 0;
             text-align: center;
-            border-top: 1px solid #333;
+            border-top: 1px solid var(--border-color);
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
         .footer p {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.9em;
+            transition: color 0.3s ease;
         }
 
         /* Responsive */
@@ -425,10 +501,13 @@
     </style>
 </head>
 <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo">
+             <div class="logo">
                 <a href="https://lunarstore.lojavirtuolpro.com"><img src="Ativo 3.png"></a>
             </div>
         </div>
@@ -451,7 +530,7 @@
     <section class="author">
         <div class="container">
             <div class="author-content">
-                <div class="author-image"><img src="doctor.png"></div>
+                <div class="author-image">👨‍⚕️</div>
                 <div class="author-text">
                     <h2>Especialista em Estética Facial</h2>
                     <p>Profissional com mais de duas décadas de experiência prática na área de estética facial, responsável por transformar centenas de carreiras e negócios no setor.</p>
@@ -471,8 +550,8 @@
                 <div class="product-card recommended">
                     <h3>Guia Completo</h3>
                     <p class="pages">205 páginas de conteúdo premium</p>
-                    <div class="price">R$ 79,99</div>
-                    <p class="price-detail">Pagamento à vista • Economia de R$16,00</p>
+                    <div class="price">R$ 797</div>
+                    <p class="price-detail">Pagamento à vista • Economia de R$ 216</p>
                     <ul>
                         <li>Todo o conteúdo em um único guia</li>
                         <li>Fundamentos da estética facial</li>
@@ -481,25 +560,27 @@
                         <li>Gestão administrativa completa</li>
                         <li>Contratos e documentos para download</li>
                         <li>Planilhas financeiras prontas</li>
+                        <li>Bônus: Consultoria online de 1h</li>
                     </ul>
-                    <a href="https://pay.hotmart.com/S100954935J?off=255se9ou"><button class="cta-button" onclick="purchaseComplete()">Quero o Guia Completo</button></a>
+                    <button class="cta-button" onclick="purchaseComplete()">Quero o Guia Completo</button>
                 </div>
 
                 <!-- Versão Parcelada -->
                 <div class="product-card">
                     <h3>Versão Parcelada</h3>
                     <p class="pages">3 e-books • 75 + 72 + 68 páginas</p>
-                    <div class="price">R$ 95,99 em até 10x</div>
-                    <p class="price-detail">Facilita o pagamento</p>
+                    <div class="price">3x R$ 194</div>
+                    <p class="price-detail">Total: R$ 582 • Facilita o pagamento</p>
                     <ul>
                         <li>Parte 1: Fundamentos (75 páginas)</li>
                         <li>Parte 2: Técnicas Avançadas (72 páginas)</li>
                         <li>Parte 3: Gestão do Negócio (68 páginas)</li>
                         <li>Mesmo conteúdo, dividido estrategicamente</li>
+                        <li>Receba parte a parte conforme pagamento</li>
                         <li>Ideal para quem prefere investir aos poucos</li>
                         <li>Todos os bônus incluídos</li>
                     </ul>
-                    <a href="https://pay.hotmart.com/S100954935J?off=255se9ou"><button class="cta-button" onclick="purchaseInstallments()">Comprar Parcelado</button></a>
+                    <button class="cta-button" onclick="purchaseInstallments()">Comprar Parcelado</button>
                 </div>
             </div>
         </div>
@@ -538,10 +619,10 @@
     <section class="guarantee">
         <div class="container">
             <div class="guarantee-badge">
-                <h2 style="color: #000;">Garantia de 30 Dias</h2>
+                <h2 style="color: #000;">Garantia de 7 Dias</h2>
             </div>
             <p>
-                Teste o conteúdo por 30 dias. Se não estiver satisfeito(a) com o material, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
+                Teste o conteúdo por 7 dias. Se não estiver satisfeito(a) com o material, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.
             </p>
         </div>
     </section>
@@ -563,6 +644,33 @@
     </footer>
 
     <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Load saved theme or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.setAttribute('data-theme', 'light');
+                themeToggle.textContent = '🌞';
+            } else {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        }
+        
+        function toggleTheme() {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+        
+        // Initialize theme
+        setTheme(savedTheme);
+        
         // Countdown Timer
         let timeLeft = 47 * 3600 + 23 * 60 + 15; // 47h 23m 15s in seconds
 
@@ -585,12 +693,12 @@
 
         // Purchase Functions
         function purchaseComplete() {
-            alert('Redirecionando para pagamento do Guia Completo...\n\nValor: R$ 79,99 à vista\nEconomia: R$ 50,00');
+            alert('Redirecionando para pagamento do Guia Completo...\n\nValor: R$ 797,00 à vista\nEconomia: R$ 216,00');
             // Aqui você integraria com o sistema de pagamento
         }
 
         function purchaseInstallments() {
-            alert('Redirecionando para pagamento parcelado...\n\nValor:R$ 129,99 em até 9x');
+            alert('Redirecionando para pagamento parcelado...\n\nValor: 3x R$ 194,00\nTotal: R$ 582,00');
             // Aqui você integraria com o sistema de pagamento
         }
 
@@ -630,5 +738,6 @@
             observer.observe(el);
         });
     </script>
+    
 </body>
 </html>
