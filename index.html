@@ -229,6 +229,7 @@
             background: var(--bg-primary);
             padding: 80px 0;
             transition: background-color 0.3s ease;
+            align-items: center;
         }
 
         .products h2 {
@@ -241,10 +242,12 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1fr;
+            gap: 250px;
             margin-bottom: 60px;
-        }
+            margin-left: 25%;
+            margin-right: 25%;
+            }
 
         .product-card {
             background: var(--bg-card);
@@ -252,7 +255,7 @@
             border-radius: 15px;
             border: 2px solid var(--border-color);
             transition: all 0.3s ease;
-            position: relative;
+
             overflow: hidden;
         }
 
@@ -551,7 +554,7 @@
             <div class="author-content">
                 <div class="author-image"><img src="doctor.png"></div>
                 <div class="author-text">
-                    <h2>Especialista em Estética Facial</h2>
+                    <h2>Especialista em Estética Facial e Limpeza de Pele</h2>
                     <p>Profissional com mais de duas décadas de experiência prática na área de estética facial, responsável por transformar centenas de carreiras e negócios no setor.</p>
                     <p>Autor do método mais completo de formação em estética facial disponível no mercado brasileiro.</p>
                     <span class="experience-badge">20+ Anos de Experiência</span>
@@ -563,12 +566,12 @@
     <!-- Products Section -->
     <section class="products">
         <div class="container">
-            <h2>Escolha sua Jornada</h2>
+            <h2>Comece agora sua jornada</h2>
             <div class="products-grid">
                 <!-- Guia Completo -->
                 <div class="product-card recommended">
                     <h3>Guia Completo</h3>
-                    <p class="pages">205 páginas de conteúdo premium</p>
+                    <p class="pages">3 e-books pelo preço de 1.</p>
                     <div class="price">R$ 79,99</div>
                     <p class="price-detail">Pagamento à vista • Economia de R$16,00</p>
                     <ul>
@@ -576,29 +579,14 @@
                         <li>Fundamentos da estética facial</li>
                         <li>Equipamentos e produtos essenciais</li>
                         <li>Tipos de pele e aplicações</li>
-                        <li>Gestão administrativa completa</li>
-                        <li>Contratos e documentos para download</li>
-                        <li>Planilhas financeiras prontas</li>
-                    </ul>
-                    <a href="https://pay.hotmart.com/S100954935J?off=255se9ou"><button class="cta-button" onclick="purchaseComplete()">Quero o Guia Completo</button></a>
-                </div>
-
-                <!-- Versão Parcelada -->
-                <div class="product-card">
-                    <h3>Versão Parcelada</h3>
-                    <p class="pages">3 e-books • 75 + 72 + 68 páginas</p>
-                    <div class="price">R$ 95,99 em até 10x</div>
-                    <p class="price-detail">Facilita o pagamento</p>
-                    <ul>
                         <li>Parte 1: Fundamentos (75 páginas)</li>
                         <li>Parte 2: Técnicas Avançadas (72 páginas)</li>
                         <li>Parte 3: Gestão do Negócio (68 páginas)</li>
-                        <li>Mesmo conteúdo, dividido estrategicamente</li>
-                        <li>Ideal para quem prefere investir aos poucos</li>
-                        <li>Todos os bônus incluídos</li>
+                        <li>BÔNUS: Gestão administrativa completa, Contratos e documentos para download, Planilhas financeiras prontas</li>
                     </ul>
-                    <a href="https://pay.hotmart.com/S100954935J?off=255se9ou"><button class="cta-button" onclick="purchaseInstallments()">Comprar Parcelado</button></a>
+                    <a href="https://pay.hotmart.com/S100954935J?off=255se9ou"><button class="cta-button" onclick="purchaseComplete()">Quero o Guia Completo</button></a>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -681,7 +669,7 @@
         });
 
         function updateThemeIcon(theme) {
-            themeIcon.textContent = theme === 'dark' ? '💡' : '🔦';
+            themeIcon.textContent = theme === 'dark' ? '🔦' : '💡';
             themeIcon.style.transform = 'rotate(360deg)';
             setTimeout(() => {
                 themeIcon.style.transform = 'rotate(0deg)';
